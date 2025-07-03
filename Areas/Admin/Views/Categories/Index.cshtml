@@ -1,0 +1,48 @@
+﻿@using Ecommerce_MVC__11.Models
+@model List<Category>
+
+@section Heading {
+
+Categories
+}
+
+
+@section title {
+
+Categories
+}
+
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>price</th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach(var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Name</td>
+                
+
+                <td>
+                    <a type="button" class="btn btn-danger" href="~/Admin/Categories/Delete/@x.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>

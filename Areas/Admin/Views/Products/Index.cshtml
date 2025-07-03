@@ -1,0 +1,61 @@
+﻿@using Ecommerce_MVC__11.Models
+@model List<Product>
+
+@section Heading {
+
+    Products
+}
+
+
+@section title {
+
+    Products
+}
+
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>MyProperty</th>
+            <th>Rate</th>
+            <th>Discount</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Action</th>
+         
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Name</td>
+                <td>@x.MyProperty</td>
+                <td>@x.Rate</td>
+                <td>@x.Discount</td>
+                <td>@x.Quantity</td>
+                <td>@x.Price</td>
+                <td>@x.Image</td>
+                
+
+                <td>
+                    <a type="button" onclick="return confirm('Yes');" class="btn btn-danger" href="~/Admin/Products/Delete/@x.Id">Delete</a>
+                    <a type="button" class="btn btn-primary" href="~/Admin/Products/Edit/@x.Id">Edit</a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>

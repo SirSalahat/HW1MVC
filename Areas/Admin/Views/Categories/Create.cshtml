@@ -1,0 +1,54 @@
+﻿@using Ecommerce_MVC__11.Models
+@section Heading {Create
+
+}
+
+
+@section Title {
+Create
+
+}
+@model Category;
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form" method="post" asp-action="Create" asp-controller="Categories">
+
+    <div class="form-group">
+       
+    <label asp-for="Name" class=""></label>
+    <br />
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name"></span>
+
+        <br />
+
+    <button style="float:right" type="submit" class="btn btn-primary">Ok</button>
+    </div>
+</form>
+
+<style>
+    form input {
+        animation: color 1000ms ;
+    }
+
+    @@keyframes color {
+        0%
+
+    {
+            background-color: white;
+        }
+
+    50% {
+            background-color: black;
+           width:0%;
+    }
+
+    100% {
+            background-color: white;
+    }
+
+    }
+</style>
